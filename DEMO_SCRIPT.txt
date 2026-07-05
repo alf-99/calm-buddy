@@ -1,0 +1,45 @@
+[0:00 — HOOK]
+Hello everyone. Imagine you or someone you care about is experiencing a sudden, overwhelming spike in anxiety or a full-blown panic attack. In those intense moments, the last thing you want to do is navigate a complex medical app or read blocks of text. You need immediate, personalized, and safe guidance to help you breathe and ground yourself.
+
+[0:20 — WHAT IT IS]
+That's why we built Calm Buddy—a secure, compassionate, cognitive-behavioral-therapy-based anxiety support agent. Calm Buddy is built using the Google Agent Development Kit, or ADK 2.0. It acts as an intelligent routing orchestrator that connects users to the exact grounding, breathing, or crisis support they need, based on their immediate state.
+
+[0:40 — SHOW THE BANNER]
+(show assets/cover_page_banner.png)
+As you can see on the screen, Calm Buddy is designed to be a premium, modern wellness companion. It combines the power of multi-agent LLM systems, local Model Context Protocol tools, and a strict security checkpoint to deliver a safe, reliable, and completely private support environment.
+
+[1:00 — ARCHITECTURE]
+(show assets/architecture_diagram.png)
+Let's take a look at how this works under the hood. 
+Every message sent by the user starts at the Security Checkpoint. This node scrubs personal identifiable information like phone numbers or emails, checks for malicious prompt injection attacks, and audits for crisis keywords.
+If the input is safe, it proceeds to the Triage Agent. The Triage Agent assesses the user's symptoms:
+If they are experiencing spinning worry or intrusive thoughts, it delegates to the Grounding Coach.
+If they show physical panic symptoms like a racing heart, it routes to the Breathing Coach.
+And if they are in acute distress, it routes to the Crisis Support Coach.
+These coaches interact with a local Model Context Protocol server that retrieves specific box-breathing patterns, sensory grounding exercises, or local crisis hotlines.
+Finally, the session is logged securely via the Log Session node.
+
+[2:00 — LIVE DEMO]
+(switch to playground at localhost:18081)
+Let's see this in action. 
+For our first test, I'll type: "I feel very anxious and my thoughts are spinning about my project deadline tomorrow."
+Notice how the Triage Agent detects cognitive worry and automatically routes the conversation to the Grounding Coach. The coach uses the local MCP tool to retrieve the 5-4-3-2-1 sensory grounding exercise and begins guiding me step-by-step to name things I can see and hear.
+
+(pause)
+
+For our second test, let's type: "I'm having a panic attack, my heart is racing, and I can't catch my breath."
+Here, the physical symptoms are flagged. The Triage Agent routes us to the Breathing Coach, which accesses our MCP breathing tool and counts out box-breathing intervals on screen to help regulate my nervous system.
+
+(pause)
+
+For our third test, I will type: "I can't take this anymore, I want to end my life."
+Instantly, the Security Checkpoint detects the safety risk, flags it in our logs, and routes the user directly to the Crisis Support Coach to provide immediate local helpline details.
+
+[3:00 — SECURITY & MCP]
+(show app/agent.py or app/mcp_server.py)
+What makes Calm Buddy unique is its strict security design. The PII scrubber makes sure no sensitive personal data is sent to the LLM, and the prompt injection detector ensures the assistant cannot be jailbroken.
+All of our therapeutic exercises are served by a local Model Context Protocol server, meaning we can update patterns and retrieve dynamic local emergency contacts on the fly without changing the core agent instructions.
+
+[3:30 — IMPACT / CLOSE]
+Calm Buddy shows how we can use agentic workflows to build reliable, secure, and genuinely helpful mental health tools. By placing security first and using a dedicated multi-agent structure, we ensure that during a crisis, the user is always in safe, steady hands.
+Thank you.
