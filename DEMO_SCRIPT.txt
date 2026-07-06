@@ -1,45 +1,51 @@
-[0:00 — HOOK]
-Hello everyone. Imagine you or someone you care about is experiencing a sudden, overwhelming spike in anxiety or a full-blown panic attack. In those intense moments, the last thing you want to do is navigate a complex medical app or read blocks of text. You need immediate, personalized, and safe guidance to help you breathe and ground yourself.
+title:
+In the middle of a panic attack, the world doesn't just feel loud—it feels impossible to navigate. This is Calm Buddy: a secure, multi-agent sanctuary designed to provide immediate, clinical support in a digital age where safety is often an afterthought.
 
-[0:20 — WHAT IT IS]
-That's why we built Calm Buddy—a secure, compassionate, cognitive-behavioral-therapy-based anxiety support agent. Calm Buddy is built using the Google Agent Development Kit, or ADK 2.0. It acts as an intelligent routing orchestrator that connects users to the exact grounding, breathing, or crisis support they need, based on their immediate state.
+I’m Anika Choudhury, and for my Google Kaggle AI Agent Capstone, I set out to solve a critical gap in digital mental health: the space where technology meets human vulnerability.
 
-[0:40 — SHOW THE BANNER]
-(show assets/cover_page_banner.png)
-As you can see on the screen, Calm Buddy is designed to be a premium, modern wellness companion. It combines the power of multi-agent LLM systems, local Model Context Protocol tools, and a strict security checkpoint to deliver a safe, reliable, and completely private support environment.
 
-[1:00 — ARCHITECTURE]
-(show assets/architecture_diagram.png)
-Let's take a look at how this works under the hood. 
-Every message sent by the user starts at the Security Checkpoint. This node scrubs personal identifiable information like phone numbers or emails, checks for malicious prompt injection attacks, and audits for crisis keywords.
-If the input is safe, it proceeds to the Triage Agent. The Triage Agent assesses the user's symptoms:
-If they are experiencing spinning worry or intrusive thoughts, it delegates to the Grounding Coach.
-If they show physical panic symptoms like a racing heart, it routes to the Breathing Coach.
-And if they are in acute distress, it routes to the Crisis Support Coach.
-These coaches interact with a local Model Context Protocol server that retrieves specific box-breathing patterns, sensory grounding exercises, or local crisis hotlines.
-Finally, the session is logged securely via the Log Session node.
 
-[2:00 — LIVE DEMO]
-(switch to playground at localhost:18081)
-Let's see this in action. 
-For our first test, I'll type: "I feel very anxious and my thoughts are spinning about my project deadline tomorrow."
-Notice how the Triage Agent detects cognitive worry and automatically routes the conversation to the Grounding Coach. The coach uses the local MCP tool to retrieve the 5-4-3-2-1 sensory grounding exercise and begins guiding me step-by-step to name things I can see and hear.
+1:
+The problem is stark. When a crisis hits, users have zero cognitive capacity to navigate complex medical menus or read blocks of text. They are currently stranded between 'Medical Portals' that are too slow and 'Standard AI' that is prone to hallucinations and lacks the clinical safety guardrails necessary for life-or-death moments. Unsafe AI isn't just unhelpful; it's dangerous.
 
-(pause)
+2:
+Calm Buddy is the solution. It’s an intelligent routing orchestrator built on Google ADK 2.0 that provides empathetic, CBT-based therapy while strictly enforcing clinical safety. It offers three things: Immediate Triage, Specialized Interventions, and Uncompromising Safety.
 
-For our second test, let's type: "I'm having a panic attack, my heart is racing, and I can't catch my breath."
-Here, the physical symptoms are flagged. The Triage Agent routes us to the Breathing Coach, which accesses our MCP breathing tool and counts out box-breathing intervals on screen to help regulate my nervous system.
+3:
+Why agents? Because mental health is too sensitive for the 'stochastic' or unpredictable nature of standard LLMs. By using a multi-agent architecture, I isolate instructions. My specialized agents—like the Grounding and Breathing coaches—can only execute verified, evidence-based protocols. I replace 'maybe' with deterministic clinical logic.
 
-(pause)
+4:
+The ecosystem is powered by a Local Model Context Protocol (MCP) Server. This is unique: by serving tools like breathing patterns or emergency contacts locally, I can update clinical resources on the fly without ever risking the core security of the agent logic.
 
-For our third test, I will type: "I can't take this anymore, I want to end my life."
-Instantly, the Security Checkpoint detects the safety risk, flags it in our logs, and routes the user directly to the Crisis Support Coach to provide immediate local helpline details.
 
-[3:00 — SECURITY & MCP]
-(show app/agent.py or app/mcp_server.py)
-What makes Calm Buddy unique is its strict security design. The PII scrubber makes sure no sensitive personal data is sent to the LLM, and the prompt injection detector ensures the assistant cannot be jailbroken.
-All of our therapeutic exercises are served by a local Model Context Protocol server, meaning we can update patterns and retrieve dynamic local emergency contacts on the fly without changing the core agent instructions.
+5:
+Safety is the first priority. Every user input must pass through a 4-Layer Security Vault. We scrub PII for absolute privacy, block prompt injections, proactively monitor for crisis keywords, and generate structured audit logs for real-time monitoring. The AI never sees what it shouldn't.
 
-[3:30 — IMPACT / CLOSE]
-Calm Buddy shows how we can use agentic workflows to build reliable, secure, and genuinely helpful mental health tools. By placing security first and using a dedicated multi-agent structure, we ensure that during a crisis, the user is always in safe, steady hands.
-Thank you.
+
+6:
+The architecture prioritizes logic over probability. The ADK workflow graph ensures that high-priority crisis states are mathematically guaranteed to bypass standard chat and hit security protocols instantly. In a crisis, there is no room for a 'wrong turn' in the code.
+
+
+7:
+AI autopilot is dangerous in a crisis, so I built a 'Hard Pause.' If a crisis is detected, the system uses the ADK RequestInput class to halt the workflow. It refuses to proceed until it verifies the 'biological reality' of the user's safety through forced human confirmation. We ensure a human is present when it matters most.
+
+8:
+Let's see the results. When a user reports 'spinning thoughts,' the Triage Agent delegates to the Grounding Agent. This triggers a local MCP tool that guides them through a '5-4-3-2-1' sensory exercise, pulling their focus away from the panic and back to the room.
+
+9:
+When the distress is physical—'I can't breathe'—the system routes to the Breathing Agent. It delivers a regulated 4-7-8 breathing pattern. This isn't just chatting; this is actively helping the user regulate their nervous system in real-time.
+
+10:
+In an acute crisis, the Security Checkpoint bypasses the entire triage system. It detects severe risk keywords and routes the user directly to the Crisis Support Agent, delivering immediate, confidential local helpline resources to the user's screen instantly.
+
+11:
+The advantage of this architecture is clear: it is a reliable therapy tool that is privacy-first, evidence-based, and safety-critical. By using fail-safe orchestration, we ensure the model can never be manipulated into causing harm.
+
+12:
+Calm Buddy proves that we can use advanced AI to prioritize human safety above all else. When the mind is spinning, it is necessary to ensure the user is always in safe, steady hands. 
+
+Thank you for your time.
+
+
+
+
